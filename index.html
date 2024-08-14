@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.2/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.3/cdn.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white py-4 fixed w-full top-0 z-10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center px-4">
+            <a href="#home" class="text-2xl font-bold hover:text-pink-500">Prabesh Shrestha</a>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-pink-500">Home</a></li>
+                <li><a href="#about" class="hover:text-pink-500">About</a></li>
+                <li><a href="#skills" class="hover:text-pink-500">Skills</a></li>
+                <li><a href="#portfolio" class="hover:text-pink-500">Portfolio</a></li>
+                <li><a href="#contact" class="hover:text-pink-500">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="h-screen flex flex-col justify-center items-center bg-gray-900 text-white">
+        <h1 class="text-4xl md:text-6xl font-bold animate-fadeInUp">Hi, I'm <span class="text-pink-500">Prabesh Shrestha</span></h1>
+        <p class="mt-4 text-lg md:text-xl animate-fadeInUp">Emerging Full Stack Developer</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-gradient-to-r from-blue-500 to-teal-500 text-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center">About Me</h2>
+            <p class="mt-4 text-center text-gray-100 animate-fadeIn">
+                I'm Prabesh Shrestha, a dedicated emerging Full-Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). I build dynamic and scalable web applications, combining intuitive front-end interfaces with powerful back-end solutions.
+
+                I’m excited to connect with tech recruiters, hiring managers, and industry professionals. Let’s explore how I can contribute to innovative projects and drive growth together.
+                
+                Outside of tech, I’m a deep thinker who enjoys engaging in meaningful conversations. I’m also a sports fanatic, especially when it comes to football, with a particular admiration for Messi. Additionally, I love acting and exploring the creative side of life.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 px-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center">Skills</h2>
+            <div class="mt-8 space-y-6">
+                <div class="skill-bar" x-data="{ width: '0%' }" x-intersect:enter="width = '90%'">
+                    <span class="block text-gray-100">HTML/CSS</span>
+                    <div class="w-full bg-gray-300 rounded-full h-2.5">
+                        <div :style="{ width }" class="h-2.5 bg-pink-500 rounded-full"></div>
+                    </div>
+                </div>
+                <!-- Add more skill bars here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 px-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center">Portfolio</h2>
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Thumbnail -->
+                <div class="portfolio-item relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-500">
+                    <img src="assets/project1.jpg" alt="Project 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 hover:opacity-100 transition duration-500">
+                        <h3 class="text-lg font-bold text-white">Project Title</h3>
+                        <p class="text-white mt-2">Short description of the project...</p>
+                    </div>
+                </div>
+                <!-- Add more projects here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-gradient-to-r from-teal-500 to-blue-600 text-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center">Contact</h2>
+            <form class="mt-8 space-y-4 max-w-md mx-auto">
+                <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100">
+                <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100">
+                <textarea placeholder="Your Message" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100"></textarea>
+                <button type="submit" class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition">Send Message</button>
+            </form>
+
+            <!-- CV and Gmail Links -->
+            <div class="mt-8 text-center">
+                <a href="Basic_CV.pdf" class="text-lg text-pink-500 hover:text-pink-600 transition" download>Download My CV</a> | 
+                <a href="mailto:weeareone321@gmail.com" class="text-lg text-pink-500 hover:text-pink-600 transition">Email Me</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
